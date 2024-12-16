@@ -1,0 +1,599 @@
+/* Custom CSS for Projects Section */
+#projects .features {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center items horizontally */
+    padding: 10px; /* Padding around the container */
+}
+
+#projects .features li {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: calc(50% - 20px); /* Default to two items per row */
+    margin: 0 auto; /* Center items horizontally */
+    transition: transform 0.3s ease;
+}
+
+#projects .features li:hover {
+    transform: scale(1.03);
+}
+
+#projects .features .image-link {
+    display: block; /* Ensure the link takes up the full space of the image container */
+}
+
+#projects .features .image {
+    width: 100%; /* Ensure the image container takes full width */
+    height: 200px; /* Set a fixed height */
+    overflow: hidden;
+    position: relative; /* Position children absolutely within this container */
+}
+
+#projects .features .image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    transform: translate(-50%, -50%); /* Center the image */
+    transition: filter 0.3s ease; /* Smooth filter transition */
+}
+
+/* Apply a grayscale effect on hover to give a visual clue */
+#projects .features .image-link:hover .image img {
+    filter: grayscale(100%);
+}
+
+#projects .features .content {
+    padding: 20px;
+}
+
+#projects .features .content h3 {
+    margin-top: 0;
+}
+
+#projects .features .actions {
+    margin-top: auto;
+}
+
+#projects .features .actions .button,
+#projects .see-more .button {
+    background-color: transparent;
+    border: solid 2px #b4b4b4;
+    color: #000000 !important;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    padding: 0 1.5em;
+    height: 2.75em;
+    line-height: 2.75em;
+    min-width: 9.25em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#projects .features .actions .button:hover,
+#projects .see-more .button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#projects .features .actions .button:active,
+#projects .see-more .button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#projects .features .actions .button.primary,
+#projects .see-more .button.primary {
+    background-color: #ffffff;
+    color: #000000 !important;
+    box-shadow: none;
+}
+
+#projects .features .actions .button.primary:hover,
+#projects .see-more .button.primary:hover {
+    background-color: #d6d6d6;
+}
+
+#projects .features .actions .button.primary:active,
+#projects .see-more .button.primary:active {
+    background-color: #d6d6d6;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    #projects .features li {
+        width: calc(50% - 20px); /* Two items per row */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #projects .features li {
+        width: calc(50% - 20px); /* Two items per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #projects .features li {
+        width: calc(100% - 20px); /* One item per row */
+    }
+}
+
+/* Hidden Project Items */
+.project-item.hidden {
+    display: none;
+}
+
+/* See More Button */
+#projects .see-more {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#projects .see-more .button {
+    font-family: 'Space Mono', monospace; /* Match the font family */
+    font-size: inherit; /* Inherit the font size */
+}
+
+/* Project styles */
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.project-links .button.small {
+    font-size: 0.8em;
+    padding: 0.4em 1.2em;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-links .button.small:hover {
+    background-color: #357abd;
+}
+
+.tech-stack {
+    margin: 1rem 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.tech-stack span {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.3rem 0.8rem;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    color: #333;
+}
+
+.project-item {
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-item .image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom CSS for Skills Section */
+#skills .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+#skills .skills-group {
+    flex: 1 1 calc(33.33% - 20px);
+    min-width: 250px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#skills .skills-group:hover {
+    transform: scale(1.05);
+}
+
+#skills .skills-group h3 {
+    margin-top: 0;
+    font-size: 1.25em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#skills .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+#skills .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#skills .skill-item i {
+    font-size: 1.0em;
+    color: #333;
+}
+
+#skills .skill-item span {
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    #skills .skills-group {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #skills .skills-group {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #skills .skills-group {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+
+
+/* Base font size for body */
+body {
+    font-size: 16px; /* Base size */
+    line-height: 1.5;
+}
+
+/* Header styling */
+#header h1 {
+    font-size: 2rem; /* Responsive size */
+    margin-bottom: 0.5rem;
+}
+
+#header p {
+    font-size: 1rem; /* Responsive size */
+}
+
+/* Navigation Bar */
+#nav ul li a {
+    font-size: 1rem; /* Adjust as needed */
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 1.5rem; /* Responsive size */
+}
+
+/* About Me section */
+#about p {
+    font-size: 1rem; /* Responsive size */
+}
+
+/* Projects Section */
+#projects h3 {
+    font-size: 1.25rem; /* Responsive size */
+}
+
+#projects p {
+    font-size: 1rem; /* Responsive size */
+}
+
+/* Skills Section */
+.skills-group h3 {
+    font-size: 1.25rem; /* Responsive size */
+}
+
+.skills-list .skill-item span {
+    font-size: 2rem; /* Responsive size */
+}
+
+/* Footer */
+#footer h2 {
+    font-size: 1.25rem; /* Responsive size */
+}
+
+#footer p {
+    font-size: 1rem; /* Responsive size */
+}
+
+/* Media Queries for larger screens */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px; /* Increase base size on larger screens */
+    }
+    
+    #header h1 {
+        font-size: 2.5rem; /* Larger size for headers */
+    }
+
+    #header p {
+        font-size: 1.2rem; /* Larger size for paragraphs */
+    }
+
+    #nav ul li a {
+        font-size: 1.2rem; /* Larger size for nav links */
+    }
+
+    section h2 {
+        font-size: 1.75rem; /* Larger size for section titles */
+    }
+
+    #about p {
+        font-size: 1.1rem; /* Larger size for paragraphs */
+    }
+
+    #projects h3 {
+        font-size: 1.5rem; /* Larger size for project titles */
+    }
+
+    #projects p {
+        font-size: 1.1rem; /* Larger size for project paragraphs */
+    }
+
+    .skills-group h3 {
+        font-size: 1.5rem; /* Larger size for skill group titles */
+    }
+
+    .skills-list .skill-item span {
+        font-size: 1.1rem; /* Larger size for skill items */
+    }
+
+    #footer h2 {
+        font-size: 1.5rem; /* Larger size for footer titles */
+    }
+
+    #footer p {
+        font-size: 1.1rem; /* Larger size for footer paragraphs */
+    }
+}
+
+
+
+
+/* Timeline Section */
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  /* Timeline Container */
+  #timeline {
+    position: relative;
+    padding: 60px 0;
+    background-color: #ffffff; /* Background color matching your existing sections */
+    overflow: hidden;
+    max-width: 1200px; /* Restrict the width of the timeline */
+    margin: 0 auto; /* Center the timeline */
+  }
+  
+  /* Timeline List */
+  #timeline ul {
+    --col-gap: 2rem;
+    --row-gap: 10rem;
+    --line-w: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr var(--line-w) 1fr;
+    grid-auto-columns: max-content;
+    column-gap: var(--col-gap);
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  /* Vertical Line */
+  #timeline ul::before {
+    content: "";
+    grid-column: 2;
+    grid-row: 1 / span 20;
+    background: #dcdcdc; /* Light gray for the line */
+    border-radius: calc(var(--line-w) / 2);
+    position: relative;
+    left: calc(var(--line-w) / 2); /* Center the line */
+  }
+  
+  /* Timeline Items */
+  #timeline ul li {
+    grid-column: 2;
+    margin-inline: 0;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    position: relative;
+    max-width: 100%; /* Ensure the items do not overflow */
+  }
+  
+  /* Date Styling */
+  #timeline ul li .date {
+    --dateH: 3rem;
+    height: var(--dateH);
+    margin-inline: 0;
+    text-align: center;
+    background-color: transparent; /* Matches button background */
+    color: #ffffff; /* Text color for contrast */
+    font-size: 1.00rem;
+    font-weight: 700;
+    display: grid;
+    place-content: center;
+    position: relative;
+    border-radius: 8px; /* Matches button border radius */
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35); /* Matches button box-shadow */
+    border: 0; /* Remove default border */
+    z-index: 1; /* Ensure the dot is on top */
+  }
+  
+  /* Date Button Styles */
+  #timeline ul li .date {
+    display: inline-block;
+    height: 2.75em; /* Match button height */
+    line-height: 2.75em; /* Center text vertically */
+    min-width: 9.25em; /* Match button min-width */
+    padding: 0 1.5em; /* Match button padding */
+    background-color: transparent; /* Transparent background */
+    color: #000000; /* Text color for visibility */
+    border: solid 1px rgba(255, 255, 255, 0.35); /* Subtle border */
+    border-radius: 8px; /* Match button border radius */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-weight: 300; /* Match button font weight */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover effects */
+  }
+  
+  /* Hover and Active States */
+  #timeline ul li .date:hover {
+    background-color: rgba(255, 255, 255, 0.075); /* Light hover background */
+    color: #7e7d7d; /* Ensure text color stays visible */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  #timeline ul li .date:active {
+    background-color: rgba(255, 255, 255, 0.2); /* Darker active background */
+    transform: scale(1); /* Return to normal size when active */
+  }
+  
+  /* Circle */
+  #timeline ul li .date::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: #ffffff; /* Background color of the dot */
+    border: 0.3rem solid #333; /* Border color matching the date background */
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  
+  /* Title and Description */
+  #timeline ul li .title,
+  #timeline ul li .descr {
+    background: #ffffff; /* Background matching the section's color */
+    position: relative;
+    padding-inline: 1.5rem;
+  }
+  
+  #timeline ul li .title {
+    overflow: hidden;
+    padding-block-start: 1.5rem;
+    padding-block-end: 1rem;
+    font-weight: 500;
+    color: #333; /* Text color matching the rest of the site */
+  }
+  
+  #timeline ul li .descr {
+    padding-block-end: 1.5rem;
+    font-weight: 300;
+    color: #666; /* Slightly lighter text color for description */
+  }
+  
+  /* Shadows */
+  #timeline ul li .title::before,
+  #timeline ul li .descr::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.1); /* Light shadow to blend with the design */
+    left: 50%;
+    border-radius: 50%;
+    filter: blur(4px);
+    transform: translate(-50%, 50%);
+  }
+  
+  #timeline ul li .title::before {
+    bottom: calc(100% + 0.125rem);
+  }
+  
+  #timeline ul li .descr::before {
+    z-index: -1;
+    bottom: 0.25rem;
+  }
+  
+  /* Zigzag Layout */
+  @media (min-width: 40rem) {
+    #timeline ul {
+      grid-template-columns: 1fr var(--line-w) 1fr;
+    }
+    
+    #timeline ul::before {
+      grid-column: 2;
+    }
+    
+    #timeline ul li:nth-child(odd) {
+      grid-column: 1;
+      text-align: right;
+    }
+    
+    #timeline ul li:nth-child(even) {
+      grid-column: 3;
+      text-align: left;
+    }
+  
+    /* Adjust date position for zigzag effect */
+    #timeline ul li:nth-child(odd) .date::after {
+      transform: translate(-50%, -50%);
+      right: auto;
+      left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+    }
+  
+    #timeline ul li:nth-child(even) .date::after {
+      right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+      left: auto;
+    }
+  
+    /* Adjust the vertical alignment of items */
+    #timeline ul li:nth-child(odd) {
+      margin-bottom: var(--row-gap);
+      margin-top: 0;
+    }
+    
+    #timeline ul li:nth-child(even) {
+      margin-top: var(--row-gap);
+      margin-bottom: 0;
+    }
+  }
+  
