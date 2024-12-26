@@ -1,4 +1,4 @@
-## Girish Bodempudi Ram's Portfolio Website
+## Venkata Charan Teja Gunisetty's Portfolio Website
 
 # Venkata Charan Teja Gunisetty
 ### Data Scientist | Machine Learning Engineer | AI Researcher
