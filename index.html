@@ -20,6 +20,42 @@
     
     <!-- Favicons -->
     <link rel="icon" href="images/plogo.png" type="image/png" />
+    <style>
+        .achievement {
+            display: none; /* Initially hidden */
+            position: relative;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            white-space: nowrap;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .descr:hover .achievement {
+            display: block; /* Show on hover */
+        }
+        .descr:hover .tooltip {
+            display: block; /* Show tooltip on hover */
+        }
+        .date {
+            position: relative;
+        }
+        .date .tooltip {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -45,6 +81,7 @@
                 <li><a href="#projects">My Work</a></li>
                 <li><a href="#timeline">My Journey</a></li>
                 <li><a href="#skills">Expertise</a></li>
+                <!-- <li><a href="#education">Education</a></li> -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -77,7 +114,7 @@
                 <ul class="features">
                     <li class="project-item">
                         <a href="https://github.com/charanteja25/Price-prediction-of-electricity-depends-on-renewable-sources" class="image-link">
-                            <span class="image"><img src="images/project1.jpg" alt="Electricity Price Prediction" /></span>
+                            <span class="image"><img src="assets/images/regional-variations-in-business-electricity-prices.jpg" alt="Regional Variations in Business Electricity Prices" /></span>
                         </a>
                         <div class="content">
                             <h3>UK Electricity Price Prediction</h3>
@@ -88,7 +125,7 @@
 
                     <li class="project-item">
                         <a href="https://github.com/charanteja25/extreme-weather-management" class="image-link">
-                            <span class="image"><img src="images/project2.jpg" alt="Extreme Weather Management" /></span>
+                            <span class="image"><img src="assets/images/weather-risk.jpg" alt="Extreme Weather Management" /></span>
                         </a>
                         <div class="content">
                             <h3>Extreme Weather Management System</h3>
@@ -123,7 +160,7 @@
                         </div>
                     </li>
 
-                    <li class="project-item">
+                    <!-- <li class="project-item">
                         <img src="assets/images/weather-risk.jpg" alt="Extreme Weather Management System" class="project-image">
                         <div class="content">
                             <h3>Extreme Weather Management System</h3>
@@ -139,7 +176,7 @@
                                 <a href="https://github.com/charanteja25/extreme-weather-management/blob/main/notebooks/weather_analysis.ipynb" target="_blank" class="btn">View Demo</a>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </section>
 
@@ -150,26 +187,75 @@
                 </header>
                 <ul>
                     <li style="--accent-color:#41516C">
-                        <div class="date">NOV 2023 – APR 2024</div>
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements1')">JUL 2024 – Present
+                            <div class="tooltip">Main achievement: Improved data processing efficiency by 30%</div>
+                        </div>
                         <div class="title">Data Analyst</div>
-                        <div class="descr">The Progress Group</div>
+                        <div class="descr">Fennex, United Kingdom
+                            <div class="all-achievements" id="achievements1" style="display:none;">
+                            </div>
+                        </div>
                     </li>
                     <li style="--accent-color:#FBCA3E">
-                        <div class="date">OCT 2022 – OCT 2023</div>
-                        <div class="title">Data Analyst</div>
-                        <div class="descr">Codex Edge</div>
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements2')">NOV 2022 – OCT 2023
+                            <div class="tooltip">Main achievement: Enhanced data accuracy by 25%</div>
+                        </div>
+                        <div class="title">Research Assistant</div>
+                        <div class="descr">University of Aberdeen, United Kingdom
+                            <div class="all-achievements" id="achievements2" style="display:none;">
+                            </div>
+                        </div>
                     </li>
-                    <li style="--accent-color:#E24A68">
-                        <div class="date">2021 – 2022</div>
-                        <div class="title">MSc Business Analytics</div>
-                        <div class="descr">Aston University</div>
+                    <li style="--accent-color:#FBCA3E">
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements3')">SEP 2022 – SEP 2023
+                            <div class="tooltip">Main achievement: Master's thesis on electricity price prediction in the UK</div>
+                        </div>
+                        <div class="title">Master of Science</div>
+                        <div class="descr">University of Aberdeen, United Kingdom
+                            <div class="all-achievements" id="achievements3" style="display:none;">
+                            </div>
+                        </div>
                     </li>
-                    <li style="--accent-color:#1B5F8C">
-                        <div class="date">2017 – 2020</div>
-                        <div class="title">Bachelor of Business Administration</div>
-                        <div class="descr">SRM University</div>
+                    <li style="--accent-color:#FBCA3E">
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements4')">AUG 2020 – MAY 2022
+                            <div class="tooltip">Main achievement: Improved delivery times by 8%</div>
+                        </div>
+                        <div class="title">Transportation Specialist</div>
+                        <div class="descr">Amazon, India
+                            <div class="all-achievements" id="achievements4" style="display:none;">
+                            </div>
+                        </div>
                     </li>
-                    
+                    <li style="--accent-color:#FBCA3E">
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements5')">JUL 2019 – JUL 2020
+                            <div class="tooltip">Main achievement: Improved design efficiency by 20%</div>
+                        </div>
+                        <div class="title">Design Engineer</div>
+                        <div class="descr">Zetko DKV, India
+                            <div class="all-achievements" id="achievements5" style="display:none;">
+                            </div>
+                        </div>
+                    </li>
+                    <li style="--accent-color:#FBCA3E">
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements6')">JUL 2017 – JAN 2018
+                            <div class="tooltip">Main achievement: Developed a predictive model for energy consumption</div>
+                        </div>
+                        <div class="title">Research and Development Engineer</div>
+                        <div class="descr">GILLS Pro, India
+                            <div class="all-achievements" id="achievements6" style="display:none;">
+                            </div>
+                        </div>
+                    </li>
+                    <li style="--accent-color:#FBCA3E">
+                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements7')">OCT 2013 – NOV 2017
+                            <div class="tooltip">Main achievement: Served as College President and led various student initiatives</div>
+                        </div>
+                        <div class="title">Bachelor of Technology in Mechanical Engineering</div>
+                        <div class="descr">JNTU Kakinada, India
+                            <div class="all-achievements" id="achievements7" style="display:none;">
+                            </div>
+                        </div>
+                    </li>                   
                 </ul>
             </section>
 
@@ -179,6 +265,7 @@
                     <h2>Expertise</h2>
                 </header>
                 <div class="skills-container">
+
                     <!-- Data Analytics -->
                     <div class="skills-group">
                         <h3>Data Analytics</h3>
@@ -225,36 +312,155 @@
                         </div>
                     </div>
 
-                    <!-- Cloud Systems -->
+                    <!-- Machine Learning -->
                     <div class="skills-group">
-                        <h3>Cloud Systems</h3>
+                        <h3>Machine Learning</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <i class="fas fa-cloud"></i>
-                                <span>Azure</span>
+                                <i class="fas fa-brain"></i>
+                                <span>TensorFlow</span>
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>AWS</span>
+                                <i class="fas fa-fire-alt"></i>
+                                <span>PyTorch</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>PySpark</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Scikit-learn</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Keras</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>MLflow</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CRM Tools -->
+                    <!-- Programming Languages -->
                     <div class="skills-group">
-                        <h3>CRM Tools</h3>
+                        <h3>Programming Languages</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <i class="fas fa-address-book"></i>
-                                <span>Zoho</span>
+                                <i class="fas fa-code"></i>
+                                <span>Python</span>
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-briefcase"></i>
-                                <span>Salesforce</span>
+                                <i class="fab fa-r-project"></i>
+                                <span>R</span>
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-building"></i>
-                                <span>SAP</span>
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Platforms -->
+                    <div class="skills-group">
+                        <h3>Cloud Platforms</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>AWS</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Azure</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Google Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database Systems -->
+                    <div class="skills-group">
+                        <h3>Database Systems</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>AWS DynamoDB</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>MariaDB</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>Microsoft SQL Server</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>SQLite</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skills-group">
+                        <h3>Tools & Frameworks</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Anaconda</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Django</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-file-code"></i>
+                                <span>LaTeX</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-palette"></i>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Version Control -->
+                    <div class="skills-group">
+                        <h3>Version Control</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Tools -->
+                    <div class="skills-group">
+                        <h3>Other Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-layer-group"></i>
+                                <span>SPFx</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-file-excel"></i>
+                                <span>MS Excel</span>
                             </div>
                         </div>
                     </div>
@@ -277,36 +483,37 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
+            <!-- Projects Section -->
+
         </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <section id="contact">
-                <h2>Get in Touch</h2>
-                <p>I'm always open to discussing new opportunities and collaborations in data science and machine learning.</p>
-                <dl class="alt">
-                    <dt>Location</dt>
-                    <dd>Aberdeen, United Kingdom</dd>
-                    <dt>Phone</dt>
-                    <dd>(+44) 07442 247951</dd>
-                    <dt>Email</dt>
-                    <dd><a href="mailto:charanteja.teja25@gmail.com">charanteja.teja25@gmail.com</a></dd>
-                </dl>
-                <ul class="icons">
-                    <li><a href="https://www.linkedin.com/in/charantejagunisetty/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/charanteja25" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-                </ul>
-            </section>
-            <section>
-                <h2>About This Site</h2>
-                <p>&copy; 2024 Venkata Charan Teja Gunisetty. All rights reserved.</p>
-            </section>
-        </footer>
-
     </div>
+
+    <footer id="footer">
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new opportunities and collaborations in data science and machine learning.</p>
+            <dl class="alt">
+                <dt>Location</dt>
+                <dd>Aberdeen, United Kingdom</dd>
+                <dt>Phone</dt>
+                <dd>(+44) 07442 247951</dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:charanteja.teja25@gmail.com">charanteja.teja25@gmail.com</a></dd>
+            </dl>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/charantejagunisetty/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/charanteja25" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>About This Site</h2>
+            <p>&copy; 2024 Venkata Charan Teja Gunisetty. All rights reserved.</p>
+        </section>
+    </footer>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -346,6 +553,26 @@
                 }
             });
         });
+    </script>
+    <script>
+        function toggleAchievements(id) {
+            var achievements = document.getElementById(id);
+            if (achievements.style.display === 'block') {
+                achievements.style.display = 'none';
+            } else {
+                achievements.style.display = 'block';
+            }
+        }
+
+        function showAchievement(id) {
+            var achievement = document.getElementById(id);
+            achievement.style.display = 'block';
+        }
+
+        function hideAchievement(id) {
+            var achievement = document.getElementById(id);
+            achievement.style.display = 'none';
+        }
     </script>
         
 </body>
