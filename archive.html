@@ -256,9 +256,26 @@
     }
 
     @media (max-width: 768px) {
-      nav, .page-header, .filters, .archive-wrap, .archive-footer { padding-left: 1.2rem; padding-right: 1.2rem; }
-      .td-context, .td-tech { display: none; }
-      .td-project { min-width: unset; }
+      nav, .page-header, .filters, .archive-wrap, .archive-footer {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+      .page-header { padding-top: 3.5rem; padding-bottom: 1.5rem; }
+      .td-context  { display: none; }
+      .td-tech     { display: none; }
+      .td-project  { min-width: unset; }
+      .archive-wrap { overflow-x: auto; }
+    }
+
+    @media (max-width: 480px) {
+      .page-title  { font-size: 2rem; }
+      .td-year     { font-size: 0.72rem; width: 44px; }
+      .td-project  { font-size: 0.8rem; }
+      .td-links    { white-space: normal; }
+      .archive-link { margin-right: 6px; font-size: 0.68rem; }
+      .filters     { gap: 6px; }
+      .filter-btn  { padding: 4px 10px; font-size: 0.65rem; }
+      .archive-footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
 </head>
