@@ -1,579 +1,1460 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Venkata Charan Teja Gunisetty - Data Scientist</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Venkata Charan Teja Gunisetty's portfolio showcasing expertise in Data Science, Machine Learning, and AI." />
-    <meta name="keywords" content="Venkata Charan Teja Gunisetty, Data Science, Machine Learning, Deep Learning, Python, SQL, Power BI, AWS, Azure" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Link to your stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    
-    <!-- Link to Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Link to noscript stylesheet -->
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    
-    <!-- Favicons -->
-    <link rel="icon" href="images/plogo.png" type="image/png" />
-    <style>
-        .achievement {
-            display: none; /* Initially hidden */
-            position: relative;
-        }
-        .tooltip {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            white-space: nowrap;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .descr:hover .achievement {
-            display: block; /* Show on hover */
-        }
-        .descr:hover .tooltip {
-            display: block; /* Show tooltip on hover */
-        }
-        .date {
-            position: relative;
-        }
-        .date .tooltip {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charan Gunisetty — Data & AI Scientist</title>
+  <meta name="description" content="Charan Gunisetty — Data & AI Scientist, 6+ years building production ML/AI systems. Open to senior DS/DE roles globally.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ── VARIABLES ──────────────────────────────── */
+    :root {
+      --bg:       #0a0e17;
+      --bg2:      #0f1520;
+      --bg3:      #151d2e;
+      --border:   rgba(255,255,255,0.07);
+      --border2:  rgba(255,255,255,0.12);
+      --acc:      #f59e0b;
+      --acc2:     #fbbf24;
+      --text:     #e2e8f0;
+      --muted:    #64748b;
+      --muted2:   #94a3b8;
+      --green:    #4ade80;
+      --disp:     'Syne', sans-serif;
+      --body:     'DM Sans', sans-serif;
+    }
+
+    /* ── RESET ──────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; }
+
+    ::-webkit-scrollbar { width:3px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--acc); border-radius:2px; }
+
+    /* ── NOISE OVERLAY ──────────────────────────── */
+    body::before {
+      content:'';
+      position:fixed; inset:0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top:0; left:0; right:0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(10,14,23,0.8);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s ease;
+    }
+    nav.scrolled { padding: 0.85rem 3rem; }
+    .nav-logo {
+      font-family: var(--disp);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      color: var(--acc);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content:'';
+      position:absolute;
+      bottom:0; left:0;
+      height:1px; width:0;
+      background: var(--acc);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width:100%; }
+
+    /* ── HERO ───────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 3rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-left { display: contents; }
+    .hero-photo-wrap { display: none; }
+    .hero-photo {
+      width: 300px;
+      height: 380px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 0;
+      border: none;
+      display: block;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.2s forwards;
+      /* fade edges into dark background — face stays sharp */
+      -webkit-mask-image: radial-gradient(
+        ellipse 82% 88% at 50% 38%,
+        black 38%,
+        rgba(0,0,0,0.95) 52%,
+        rgba(0,0,0,0.6) 65%,
+        transparent 80%
+      );
+      mask-image: radial-gradient(
+        ellipse 82% 88% at 50% 38%,
+        black 38%,
+        rgba(0,0,0,0.95) 52%,
+        rgba(0,0,0,0.6) 65%,
+        transparent 80%
+      );
+    }
+    .hero-photo-accent { display: none; }
+    @media (max-width: 960px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-photo-wrap { display: none; }
+    }
+
+    /* Dot grid */
+    #hero::before {
+      content:'';
+      position:fixed; inset:0;
+      background-image: radial-gradient(circle, rgba(245,158,11,0.12) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+      z-index: -1;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 20%, black 30%, transparent 100%);
+    }
+
+    /* Ambient glow */
+    .hero-glow {
+      position:absolute;
+      width:700px; height:700px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 65%);
+      top:-10%; left:-15%;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--acc);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.15s forwards;
+    }
+    .hero-eyebrow::before {
+      content:'';
+      width: 28px; height: 1px;
+      background: var(--acc);
+    }
+
+    .hero-name {
+      font-family: var(--disp);
+      font-weight: 800;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.3s forwards;
+    }
+    .hero-name .accent-dot { color: var(--acc); }
+
+    .hero-role-line {
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--muted2);
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.5s forwards;
+      letter-spacing: 0.01em;
+    }
+    #role-text {
+      color: var(--acc);
+      font-weight: 500;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cursor {
+      display: inline-block;
+      width: 2px; height: 1.1em;
+      background: var(--acc);
+      vertical-align: middle;
+      margin-left: 3px;
+      animation: blink 1s step-end infinite;
+    }
+
+    .hero-sub {
+      font-size: 0.97rem;
+      color: var(--muted2);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.7s forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.9s forwards;
+    }
+
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.72em 1.7em;
+      background: var(--acc);
+      color: #0a0e17;
+      border-radius: 50px;
+      font-family: var(--disp);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 0 0 0 rgba(245,158,11,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-solid:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(245,158,11,0.4);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.72em 1.7em;
+      background: transparent;
+      color: var(--muted2);
+      border-radius: 50px;
+      border: 1px solid var(--border2);
+      font-family: var(--disp);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--acc);
+      color: var(--acc);
+      transform: translateY(-2px);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 1.4rem;
+      margin-top: 3.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 1.1s forwards;
+    }
+    .hero-socials a {
+      font-size: 1.15rem;
+      color: var(--muted);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .hero-socials a:hover { color: var(--acc); transform: translateY(-3px); }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 1.2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      animation: fadeIn 0.8s ease 2s forwards;
+    }
+    .scroll-cue span {
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      writing-mode: horizontal-tb;
+    }
+    .scroll-line {
+      width: 1px; height: 52px;
+      background: linear-gradient(to bottom, var(--acc), transparent);
+      animation: grow 2s ease infinite;
+      transform-origin: top;
+    }
+
+    /* ── SECTION SHARED ─────────────────────────── */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+
+    .s-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--acc);
+      margin-bottom: 0.6rem;
+    }
+    .s-title {
+      font-family: var(--disp);
+      font-weight: 800;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      color: #fff;
+      line-height: 1.08;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Reveal */
+    .r {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .r.on { opacity:1; transform:translateY(0); }
+
+    /* ── ABOUT ──────────────────────────────────── */
+    #about { background: var(--bg); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .about-photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .about-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(245,158,11,0.4);
+      box-shadow: 0 0 0 4px rgba(245,158,11,0.1), 0 8px 32px rgba(0,0,0,0.4);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .about-photo:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 0 5px rgba(245,158,11,0.25), 0 12px 40px rgba(0,0,0,0.5);
+    }
+
+    .about-body p {
+      font-size: 0.95rem;
+      color: var(--muted2);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+      font-weight: 300;
+    }
+    .about-body strong { color: var(--text); font-weight: 500; }
+    .about-body a {
+      color: var(--acc);
+      border-bottom: 1px dotted rgba(245,158,11,0.4);
+      transition: border-color 0.2s;
+    }
+    .about-body a:hover { border-color: var(--acc); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .stat-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .stat-card::after {
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0;
+      height: 2px;
+      background: var(--acc);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .stat-card:hover { transform: translateY(-4px); border-color: rgba(245,158,11,0.25); }
+    .stat-card:hover::after { transform: scaleX(1); }
+    .stat-n {
+      font-family: var(--disp);
+      font-size: 2.9rem;
+      font-weight: 800;
+      color: var(--acc);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-l {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* ── GITHUB CALENDAR ───────────────────────── */
+    .gh-calendar {
+      margin-top: 3rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+    }
+    .gh-calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .gh-calendar-header a {
+      color: var(--acc);
+      font-size: 0.7rem;
+      transition: opacity 0.2s;
+    }
+    .gh-calendar-header a:hover { opacity: 0.75; }
+    .gh-calendar-img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      opacity: 0.85;
+      filter: brightness(1.1);
+    }
+
+    /* ── PROJECTS ───────────────────────────────── */
+    #projects { background: var(--bg2); }
+
+    .proj-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      /* let hovered cards overflow their cells */
+      overflow: visible;
+    }
+
+    .proj-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1),
+                  border-color 0.25s ease,
+                  box-shadow 0.3s ease,
+                  background 0.25s ease,
+                  z-index 0s 0.3s; /* delay z-index reset until after shrink */
+    }
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--acc), transparent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .proj-card:hover {
+      transform: translateY(-12px) scale(1.05);
+      border-color: rgba(245,158,11,0.4);
+      background: var(--bg3);
+      z-index: 10;
+      transition-delay: 0s;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.7),
+                  0 0 0 1px rgba(245,158,11,0.15),
+                  0 0 50px rgba(245,158,11,0.07);
+      overflow: visible;
+    }
+    .proj-card:hover::before { opacity: 1; }
+
+    .proj-kpi {
+      font-family: var(--disp);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--acc);
+      margin-bottom: 0.5rem;
+      opacity: 0.8;
+    }
+    .proj-title {
+      font-family: var(--disp);
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+    }
+    .proj-body {
+      font-size: 0.79rem;
+      color: var(--muted2);
+      line-height: 1.65;
+      font-weight: 300;
+      margin-bottom: 0.8rem;
+      /* clamp to 2 lines at rest */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: max-height 0.35s ease, -webkit-line-clamp 0s;
+    }
+    .proj-card:hover .proj-body {
+      display: block;
+      overflow: visible;
+    }
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 0.9rem;
+    }
+    .proj-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(245,158,11,0.07);
+      color: var(--acc);
+      border: 1px solid rgba(245,158,11,0.18);
+      letter-spacing: 0.03em;
+    }
+    .proj-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s, gap 0.2s;
+      width: fit-content;
+    }
+    .proj-cta:hover { color: var(--acc); gap: 10px; }
+
+    .proj-github-cta {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .proj-github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 0.7em 1.8em;
+      transition: color 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .proj-github-link:hover {
+      color: var(--acc);
+      border-color: rgba(245,158,11,0.4);
+      transform: translateY(-2px);
+    }
+    .proj-github-link .fa-github { font-size: 1rem; }
+
+    /* ── EXPERIENCE ─────────────────────────────── */
+    #experience { background: var(--bg); }
+
+    .tl {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .tl::before {
+      content:'';
+      position:absolute;
+      left:0; top:6px; bottom:0;
+      width:1px;
+      background: linear-gradient(to bottom, var(--acc) 0%, rgba(245,158,11,0.15) 100%);
+    }
+
+    .tl-item {
+      position:relative;
+      padding: 0 0 3rem 2.2rem;
+    }
+    .tl-item:last-child { padding-bottom:0; }
+    .tl-item::before {
+      content:'';
+      position:absolute;
+      left:-4.5px; top:5px;
+      width:10px; height:10px;
+      border-radius:50%;
+      background: var(--acc);
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.15), 0 0 16px rgba(245,158,11,0.4);
+      transition: box-shadow 0.3s ease;
+    }
+    .tl-item:hover::before {
+      box-shadow: 0 0 0 5px rgba(245,158,11,0.2), 0 0 24px rgba(245,158,11,0.6);
+    }
+
+    .tl-top {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-bottom:0.3rem;
+    }
+    .tl-co {
+      font-family: var(--disp);
+      font-weight:700;
+      font-size:1rem;
+      color:#fff;
+    }
+    .tl-badge {
+      font-size:0.68rem;
+      font-weight:600;
+      padding: 2px 10px;
+      border-radius:20px;
+      background: rgba(245,158,11,0.08);
+      color: var(--acc);
+      border: 1px solid rgba(245,158,11,0.2);
+      white-space:nowrap;
+      letter-spacing:0.05em;
+    }
+    .tl-role {
+      font-size:0.8rem;
+      color:var(--muted2);
+      margin-bottom:0.5rem;
+      font-weight:400;
+    }
+    .tl-desc {
+      font-size:0.85rem;
+      color:var(--muted);
+      line-height:1.75;
+      font-weight:300;
+    }
+
+    /* ── SKILLS ─────────────────────────────────── */
+    #skills { background: var(--bg2); }
+
+    .sk-table {
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-row {
+      display: flex;
+      align-items: flex-start;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sk-row:last-child { border-bottom: none; }
+
+    .sk-cat {
+      flex-shrink: 0;
+      width: 148px;
+      padding-top: 8px;
+      padding-right: 1.5rem;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .sk-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .sk-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      cursor: default;
+      transition: transform 0.2s ease;
+      width: 52px;
+    }
+    .sk-icon:hover { transform: translateY(-4px); }
+    .sk-icon img {
+      width: 34px; height: 34px;
+      border-radius: 7px;
+      object-fit: contain;
+    }
+    .sk-icon span {
+      font-size: 0.58rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 640px) {
+      .sk-row  { flex-direction: column; gap: 0.8rem; }
+      .sk-cat  { width: auto; padding-top: 0; }
+    }
+
+    /* ── WRITING ────────────────────────────────── */
+    #writing { background: var(--bg); }
+
+    .writing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .article-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .article-card:hover {
+      border-color: rgba(245,158,11,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+      border-bottom-color: rgba(245,158,11,0.3);
+    }
+    .article-card.featured { border-top: 2px solid var(--acc); }
+
+    .article-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--acc);
+    }
+    .article-tag.series { color: var(--muted); }
+    .article-title {
+      font-family: var(--disp);
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+    }
+    .article-desc {
+      font-size: 0.78rem;
+      color: var(--muted2);
+      line-height: 1.65;
+      font-weight: 300;
+      flex: 1;
+    }
+    .article-date {
+      font-size: 0.66rem;
+      color: var(--muted);
+    }
+
+    /* Series card specifics */
+    .series-card { border-top: 2px solid var(--muted); }
+    .series-card:hover { border-top-color: var(--acc); }
+    .series-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .series-count {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 20px;
+      background: rgba(245,158,11,0.1);
+      color: var(--acc);
+      border: 1px solid rgba(245,158,11,0.2);
+    }
+    .series-chapters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.3rem;
+    }
+    .series-chapters span {
+      font-size: 0.65rem;
+      color: var(--muted);
+      background: var(--bg3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .series-chapters span:last-child {
+      color: var(--acc);
+      border-color: rgba(245,158,11,0.2);
+      background: rgba(245,158,11,0.06);
+    }
+
+    @media (max-width: 768px) {
+      .writing-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── CONTACT ────────────────────────────────── */
+    #contact {
+      background:var(--bg);
+      text-align:center;
+    }
+
+    .contact-inner {
+      max-width:640px;
+      margin:0 auto;
+    }
+
+    .status-pill {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:0.72rem;
+      font-weight:500;
+      color:var(--green);
+      background:rgba(74,222,128,0.07);
+      border:1px solid rgba(74,222,128,0.2);
+      border-radius:20px;
+      padding:5px 14px;
+      margin-bottom:2rem;
+      letter-spacing:0.04em;
+    }
+    .pulse-dot {
+      width:7px; height:7px;
+      border-radius:50%;
+      background:var(--green);
+      animation:pulse 2s ease-in-out infinite;
+      box-shadow:0 0 8px var(--green);
+    }
+
+    .contact-h {
+      font-family:var(--disp);
+      font-weight:800;
+      font-size:clamp(2.2rem, 5vw, 3.8rem);
+      color:#fff;
+      line-height:1.05;
+      margin-bottom:1.2rem;
+      letter-spacing:-0.02em;
+    }
+
+    .contact-sub {
+      font-size:0.93rem;
+      color:var(--muted2);
+      margin-bottom:2.8rem;
+      line-height:1.75;
+      font-weight:300;
+    }
+
+    .contact-email {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family:var(--disp);
+      font-size:1.15rem;
+      font-weight:600;
+      color:var(--acc);
+      margin-bottom:3rem;
+      padding-bottom:3px;
+      border-bottom:1px solid rgba(245,158,11,0.3);
+      transition:border-color 0.2s;
+    }
+    .contact-email:hover { border-color:var(--acc); }
+
+    .contact-row {
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      flex-wrap:wrap;
+    }
+    .contact-lnk {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:0.78rem;
+      font-weight:500;
+      color:var(--muted);
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      transition:color 0.2s;
+    }
+    .contact-lnk:hover { color:var(--acc); }
+    .contact-lnk i { font-size:1rem; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      border-top:1px solid var(--border);
+      padding:1.8rem 3rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      max-width:1100px;
+      margin:0 auto;
+      font-size:0.72rem;
+      color:var(--muted);
+    }
+
+    /* ── KEYFRAMES ──────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity:0; } to { opacity:1; }
+    }
+    @keyframes blink {
+      0%,100%{opacity:1} 50%{opacity:0}
+    }
+    @keyframes grow {
+      0%   { transform:scaleY(0); transform-origin:top; }
+      49%  { transform:scaleY(1); transform-origin:top; }
+      51%  { transform:scaleY(1); transform-origin:bottom; }
+      100% { transform:scaleY(0); transform-origin:bottom; }
+    }
+    @keyframes pulse {
+      0%,100%{ opacity:1; transform:scale(1); }
+      50%    { opacity:0.5; transform:scale(1.35); }
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width:960px) {
+      .proj-row       { grid-template-columns:1fr; max-width:480px; margin:0 auto; }
+      .about-inner    { grid-template-columns:1fr; gap:3rem; }
+      nav             { padding:1rem 1.5rem; }
+      .nav-links      { display:none; }
+      .section-wrap   { padding:5rem 1.5rem; }
+      #hero           { padding:6rem 1.5rem 3rem; }
+    }
+    @media (max-width:600px) {
+      .stats-grid     { grid-template-columns:1fr 1fr; }
+      .hero-ctas      { flex-direction:column; align-items:flex-start; }
+      .contact-row    { gap:1.2rem; }
+      footer          { flex-direction:column; gap:0.5rem; text-align:center; }
+      .scroll-cue     { display:none; }
+    }
+  </style>
 </head>
-<body class="is-preload">
+<body>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-logo">CG<span style="color:var(--acc)">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        <!-- Header -->
-        <header id="header" class="alt">
-            <span class="logo"><img src="images/plogo.png" alt="Logo" style="max-width: 200px; height: auto;" /></span>
-            <h1>Venkata Charan Teja Gunisetty</h1>
-            <p>Transforming Data into Strategic Insights with Precision and Innovation
-            </p>
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/charantejagunisetty/" class="icon brands fa-linkedin alt" title="LinkedIn"><span class="label">LinkedIn</span></a></li>
-                <li><a href="https://github.com/charanteja25" class="icon brands fa-github alt" title="GitHub"><span class="label">GitHub</span></a></li>
-            </ul>
-        </header>          
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-glow"></div>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="#about" class="active">Who I Am</a></li>
-                <li><a href="#projects">My Work</a></li>
-                <li><a href="#timeline">My Journey</a></li>
-                <li><a href="#skills">Expertise</a></li>
-                <!-- <li><a href="#education">Education</a></li> -->
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Left content -->
+    <div class="hero-left">
+      <p class="hero-eyebrow">Edinburgh, UK &nbsp;·&nbsp; Open to Work</p>
 
-        <!-- Main -->
-        <div id="main">
+      <h1 class="hero-name">
+        Charan<br>Gunisetty<span class="accent-dot">.</span>
+      </h1>
 
-            <!-- About Section -->
-            <section id="about" class="main">
-                <div class="spotlight">
-                    <div class="content">
-                        <header class="major">
-                            <h2>Who I Am</h2>
-                        </header>
-                        <p>I am a motivated and detail-oriented data scientist with a Master's in Data Science from the University of Aberdeen and a strong foundation in machine learning, deep learning, and advanced statistical analysis. My expertise spans across designing and implementing predictive models, optimizing neural networks, and deploying scalable solutions on cloud platforms (AWS, Azure).</p>
+      <p class="hero-role-line">
+        I'm a <span id="role-text">Data Scientist</span><span class="cursor"></span>
+      </p>
 
-                        <p>With hands-on experience in distributed machine learning and multi-agent systems, I have successfully driven innovation in real-time risk assessment, energy optimization, and large-scale data processing for both industry and academia. My recent work at Fennex demonstrates my ability to deploy deep learning models for real-time predictions and develop interactive dashboards for data visualization.</p>
-                        
-                        <p>My master's thesis on electricity price prediction in the UK, which achieved an 18% improvement in accuracy, showcases my ability to apply advanced machine learning techniques to real-world problems. I am passionate about contributing to cutting-edge advancements in AI and machine learning systems through impactful research and development.</p>
-                    </div>
-                    <span class="image"><img src="images/profile.jpg" alt="Venkata Charan Teja Gunisetty" /></span>
-                </div>
-            </section>
+      <p class="hero-sub">
+        6+ years building production ML/AI systems across energy, logistics, and public-sector domains. Currently co-founding OctoNexus Power. Open to senior DS/DE roles globally.
+      </p>
 
-            <!-- Projects Section -->
-            <section id="projects" class="main special">
-                <header class="major">
-                    <h2>My Work</h2>
-                </header>
-                <ul class="features">
-                    <li class="project-item">
-                        <a href="https://github.com/charanteja25/Price-prediction-of-electricity-depends-on-renewable-sources" class="image-link">
-                            <span class="image"><img src="assets/images/regional-variations-in-business-electricity-prices.jpg" alt="Regional Variations in Business Electricity Prices" /></span>
-                        </a>
-                        <div class="content">
-                            <h3>UK Electricity Price Prediction</h3>
-                            <p>Master's thesis project that enhanced electricity price prediction accuracy by 18% using machine learning and deep learning techniques. Implemented linear regression, logistic regression, ensemble models, and ANNs to capture complex patterns in electricity price data. Demonstrated 27% reduction in price volatility through renewable energy integration.</p>
-                            <div class="tech-stack">Python, TensorFlow, Scikit-learn, Statistical Analysis</div>
-                        </div>
-                    </li>
+      <div class="hero-ctas">
+        <a href="assets/Charan_Gunisetty_DataScientist_CV.pdf" download class="btn-solid">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="#projects" class="btn-ghost">
+          View Work <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
 
-                    <li class="project-item">
-                        <a href="https://github.com/charanteja25/extreme-weather-management" class="image-link">
-                            <span class="image"><img src="assets/images/weather-risk.jpg" alt="Extreme Weather Management" /></span>
-                        </a>
-                        <div class="content">
-                            <h3>Extreme Weather Management System</h3>
-                            <p>A comprehensive machine learning system for predicting and managing extreme weather risks. Features include real-time risk assessment using TensorFlow, interactive Plotly visualizations, FastAPI backend, and automated alerts. The system processes weather data through a sophisticated pipeline and provides actionable insights through a modern web interface.</p>
-                            <div class="tech-stack">Python, TensorFlow, FastAPI, Plotly, Machine Learning</div>
-                            <div class="project-links">
-                                <a href="https://github.com/charanteja25/extreme-weather-management" class="button small">View Project</a>
-                                <a href="https://github.com/charanteja25/extreme-weather-management/blob/main/notebooks/weather_analysis.ipynb" class="button small">View Demo</a>
-                            </div>
-                        </div>
-                    </li>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/charantejagunisetty/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/charanteja25" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://medium.com/@charanteja.gunisetty" target="_blank" title="Medium"><i class="fab fa-medium-m"></i></a>
+      </div>
 
-                    <li class="project-item">
-                        <a href="#" class="image-link">
-                            <span class="image"><img src="images/project3.jpg" alt="Sustainable Sanitation" /></span>
-                        </a>
-                        <div class="content">
-                            <h3>Sustainable Sanitation Analysis</h3>
-                            <p>Applied cluster analysis and KNN algorithms to develop predictive models for sanitation data, achieving 82% improvement in accuracy. Created a Sanitation Index that led to 14% improvement in development goals.</p>
-                            <div class="tech-stack">Python, Machine Learning, Power BI, Data Analysis</div>
-                        </div>
-                    </li>
-
-                    <li class="project-item">
-                        <a href="#" class="image-link">
-                            <span class="image"><img src="images/project4.jpg" alt="Amazon Logistics" /></span>
-                        </a>
-                        <div class="content">
-                            <h3>Amazon Logistics Optimization</h3>
-                            <p>Designed and implemented a data pipeline using AWS and Python for analyzing transportation datasets. Reduced delivery times by 8% and automated key data processing tasks, saving 41 man-hours per week.</p>
-                            <div class="tech-stack">AWS, Python, SQL, Amazon Redshift, QuickSight</div>
-                        </div>
-                    </li>
-
-                    <!-- <li class="project-item">
-                        <img src="assets/images/weather-risk.jpg" alt="Extreme Weather Management System" class="project-image">
-                        <div class="content">
-                            <h3>Extreme Weather Management System</h3>
-                            <p>A machine learning-powered system for predicting and managing extreme weather risks. Features include real-time risk assessment, interactive visualizations, and automated alerts.</p>
-                            <div class="tech-stack">
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>FastAPI</span>
-                                <span>Plotly</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/charanteja25/extreme-weather-management" target="_blank" class="btn">View Project</a>
-                                <a href="https://github.com/charanteja25/extreme-weather-management/blob/main/notebooks/weather_analysis.ipynb" target="_blank" class="btn">View Demo</a>
-                            </div>
-                        </div>
-                    </li> -->
-                </ul>
-            </section>
-
-            <!-- Timeline Section -->
-            <section id="timeline" class="main special">
-                <header class="major">
-                    <h2>My Journey</h2>
-                </header>
-                <ul>
-                    <li style="--accent-color:#41516C">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements1')">JUL 2024 – Present
-                            <div class="tooltip">Main achievement: Improved data processing efficiency by 30%</div>
-                        </div>
-                        <div class="title">Data Analyst</div>
-                        <div class="descr">Fennex, United Kingdom
-                            <div class="all-achievements" id="achievements1" style="display:none;">
-                            </div>
-                        </div>
-                    </li>
-                    <li style="--accent-color:#FBCA3E">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements2')">NOV 2022 – OCT 2023
-                            <div class="tooltip">Main achievement: Enhanced data accuracy by 25%</div>
-                        </div>
-                        <div class="title">Research Assistant</div>
-                        <div class="descr">University of Aberdeen, United Kingdom
-                            <div class="all-achievements" id="achievements2" style="display:none;">
-                            </div>
-                        </div>
-                    </li>
-                    <li style="--accent-color:#FBCA3E">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements3')">SEP 2022 – SEP 2023
-                            <div class="tooltip">Main achievement: Master's thesis on electricity price prediction in the UK</div>
-                        </div>
-                        <div class="title">Master of Science</div>
-                        <div class="descr">University of Aberdeen, United Kingdom
-                            <div class="all-achievements" id="achievements3" style="display:none;">
-                            </div>
-                        </div>
-                    </li>
-                    <li style="--accent-color:#FBCA3E">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements4')">AUG 2020 – MAY 2022
-                            <div class="tooltip">Main achievement: Improved delivery times by 8%</div>
-                        </div>
-                        <div class="title">Transportation Specialist</div>
-                        <div class="descr">Amazon, India
-                            <div class="all-achievements" id="achievements4" style="display:none;">
-                            </div>
-                        </div>
-                    </li>
-                    <li style="--accent-color:#FBCA3E">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements5')">JUL 2019 – JUL 2020
-                            <div class="tooltip">Main achievement: Improved design efficiency by 20%</div>
-                        </div>
-                        <div class="title">Design Engineer</div>
-                        <div class="descr">Zetko DKV, India
-                            <div class="all-achievements" id="achievements5" style="display:none;">
-                            </div>
-                        </div>
-                    </li>
-                    <li style="--accent-color:#FBCA3E">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements6')">JUL 2017 – JAN 2018
-                            <div class="tooltip">Main achievement: Developed a predictive model for energy consumption</div>
-                        </div>
-                        <div class="title">Research and Development Engineer</div>
-                        <div class="descr">GILLS Pro, India
-                            <div class="all-achievements" id="achievements6" style="display:none;">
-                            </div>
-                        </div>
-                    </li>
-                    <li style="--accent-color:#FBCA3E">
-                        <div class="date" title="Click for more details" onclick="toggleAchievements('achievements7')">OCT 2013 – NOV 2017
-                            <div class="tooltip">Main achievement: Served as College President and led various student initiatives</div>
-                        </div>
-                        <div class="title">Bachelor of Technology in Mechanical Engineering</div>
-                        <div class="descr">JNTU Kakinada, India
-                            <div class="all-achievements" id="achievements7" style="display:none;">
-                            </div>
-                        </div>
-                    </li>                   
-                </ul>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills" class="main special">
-                <header class="major">
-                    <h2>Expertise</h2>
-                </header>
-                <div class="skills-container">
-
-                    <!-- Data Analytics -->
-                    <div class="skills-group">
-                        <h3>Data Analytics</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fab fa-python"></i>
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>SQL</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-line"></i>
-                                <span>SAS</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>SPSS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Data Visualization -->
-                    <div class="skills-group">
-                        <h3>Data Visualization</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-chart-bar"></i>
-                                <span>Power BI</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-area"></i>
-                                <span>Tableau</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-line"></i>
-                                <span>QuickSight</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Qlik</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Machine Learning -->
-                    <div class="skills-group">
-                        <h3>Machine Learning</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-brain"></i>
-                                <span>TensorFlow</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-fire-alt"></i>
-                                <span>PyTorch</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-bolt"></i>
-                                <span>PySpark</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Scikit-learn</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-brain"></i>
-                                <span>Keras</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-project-diagram"></i>
-                                <span>MLflow</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Programming Languages -->
-                    <div class="skills-group">
-                        <h3>Programming Languages</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-code"></i>
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-r-project"></i>
-                                <span>R</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-css3-alt"></i>
-                                <span>CSS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cloud Platforms -->
-                    <div class="skills-group">
-                        <h3>Cloud Platforms</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-cloud"></i>
-                                <span>AWS</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>Azure</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-cloud"></i>
-                                <span>Google Cloud</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Database Systems -->
-                    <div class="skills-group">
-                        <h3>Database Systems</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>AWS DynamoDB</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>MariaDB</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>MySQL</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>Microsoft SQL Server</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>SQLite</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="skills-group">
-                        <h3>Tools & Frameworks</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fab fa-python"></i>
-                                <span>Anaconda</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-python"></i>
-                                <span>Django</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-file-code"></i>
-                                <span>LaTeX</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-palette"></i>
-                                <span>Figma</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Version Control -->
-                    <div class="skills-group">
-                        <h3>Version Control</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-code-branch"></i>
-                                <span>Git</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Other Tools -->
-                    <div class="skills-group">
-                        <h3>Other Tools</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-layer-group"></i>
-                                <span>SPFx</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-file-excel"></i>
-                                <span>MS Excel</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Productivity -->
-                    <div class="skills-group">
-                        <h3>Productivity</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-comment-dots"></i>
-                                <span>Slack</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-tasks"></i>
-                                <span>Jira</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-notes-medical"></i>
-                                <span>Notion</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-
-        </div>
+      <div class="scroll-cue">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
     </div>
 
-    <footer id="footer">
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>I'm always open to discussing new opportunities and collaborations in data science and machine learning.</p>
-            <dl class="alt">
-                <dt>Location</dt>
-                <dd>Aberdeen, United Kingdom</dd>
-                <dt>Phone</dt>
-                <dd>(+44) 07442 247951</dd>
-                <dt>Email</dt>
-                <dd><a href="mailto:charanteja.teja25@gmail.com">charanteja.teja25@gmail.com</a></dd>
-            </dl>
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/charantejagunisetty/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-                <li><a href="https://github.com/charanteja25" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>About This Site</h2>
-            <p>&copy; 2024 Venkata Charan Teja Gunisetty. All rights reserved.</p>
-        </section>
-    </footer>
+    <!-- Right photo -->
+    <div class="hero-photo-wrap">
+      <img src="profile.jpg" alt="Charan Gunisetty" class="hero-photo" />
+      <div class="hero-photo-accent"></div>
+    </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var seeMoreBtn = document.getElementById('seeMoreBtn');
-            
-            // Ensure the initial hidden state of items
-            var hiddenItems = document.querySelectorAll('#projects .features .project-item.hidden');
-            
-            // Initially hide the hidden items
-            hiddenItems.forEach(function(item) {
-                item.style.display = 'none';
-            });
-    
-            seeMoreBtn.addEventListener('click', function() {
-                hiddenItems.forEach(function(item) {
-                    // Toggle the display property
-                    if (item.style.display === 'none' || item.style.display === '') {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-    
-                // Update button text based on the visibility of items
-                if (hiddenItems[0].style.display === 'none' || hiddenItems[0].style.display === '') {
-                    seeMoreBtn.textContent = 'See More';
-                } else {
-                    seeMoreBtn.textContent = 'See Less';
-                }
-            });
-        });
-    </script>
-    <script>
-        function toggleAchievements(id) {
-            var achievements = document.getElementById(id);
-            if (achievements.style.display === 'block') {
-                achievements.style.display = 'none';
-            } else {
-                achievements.style.display = 'block';
-            }
-        }
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-wrap">
+      <p class="s-label r">About</p>
+      <h2 class="s-title r">Building systems<br>that reach production.</h2>
+      <div class="about-inner">
+        <div class="about-body r">
+          <p>Data &amp; AI Scientist with 6+ years across the full ML lifecycle — data engineering, model training, cloud deployment, and communicating insights to founders, clients, and governments. I've built forecasting systems for offshore drilling, credit risk platforms on Databricks, and LLM pipelines for green energy startups.</p>
+          <p>Currently a <strong>founding team member at OctoNexus Power</strong> — driving supplier acquisition, client meetings, and partnerships as we build toward prototype, on a clear path to CTO. Also co-founded <strong>Aamrutham</strong>, a live agri e-commerce platform actively trading this season. MSc Data Science, University of Aberdeen.</p>
+        </div>
+        <div class="about-right r">
+          <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-n"><span class="cnt" data-t="5">0</span></div>
+            <div class="stat-l">ML Systems in Production</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-n"><span class="cnt" data-t="15">0</span>+</div>
+            <div class="stat-l">Stakeholder Dashboards</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-n"><span class="cnt" data-t="2">0</span></div>
+            <div class="stat-l">Startups Co-Founded</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-n"><span class="cnt" data-t="6">0</span>+</div>
+            <div class="stat-l">Years End-to-End</div>
+          </div>
+          </div>
+        </div>
+      </div>
 
-        function showAchievement(id) {
-            var achievement = document.getElementById(id);
-            achievement.style.display = 'block';
-        }
 
-        function hideAchievement(id) {
-            var achievement = document.getElementById(id);
-            achievement.style.display = 'none';
-        }
-    </script>
-        
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-wrap">
+      <p class="s-label r">Selected Work</p>
+      <h2 class="s-title r">Projects.</h2>
+      <div class="proj-row">
+
+        <div class="proj-card r">
+          <p class="proj-kpi">1M+ Records &nbsp;·&nbsp; 18% Accuracy Lift</p>
+          <h3 class="proj-title">Extreme Weather Prediction System</h3>
+          <p class="proj-body">Ensemble ML model for Noble Drilling's offshore operations globally. Early-warning system for extreme weather risk. Part of the Fennex team whose work was recognised with a Digital Innovation Award.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">TensorFlow</span>
+            <span class="proj-tag">Azure ML</span>
+            <span class="proj-tag">Power BI</span>
+          </div>
+          <a href="https://github.com/charanteja25/extreme-weather-management" target="_blank" class="proj-cta">
+            <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right" style="font-size:0.65rem"></i>
+          </a>
+        </div>
+
+        <div class="proj-card r" style="transition-delay:0.1s">
+          <p class="proj-kpi">307K Applications &nbsp;·&nbsp; 0.788 AUC</p>
+          <h3 class="proj-title">Housing Credit Default Risk</h3>
+          <p class="proj-body">End-to-end credit risk platform on Databricks. Full medallion architecture (Bronze → Silver → Gold) with Delta Lake ACID compliance and Unity Catalog governance. 240+ engineered features. Enables auto-approval for 60% of low-risk applicants.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Databricks</span>
+            <span class="proj-tag">PySpark</span>
+            <span class="proj-tag">LightGBM</span>
+            <span class="proj-tag">MLflow</span>
+            <span class="proj-tag">Unity Catalog</span>
+          </div>
+          <a href="https://github.com/charanteja25/HousingCreditDefaultRisk" target="_blank" class="proj-cta">
+            <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right" style="font-size:0.65rem"></i>
+          </a>
+        </div>
+
+        <div class="proj-card r" style="transition-delay:0.2s">
+          <p class="proj-kpi">22% RMSE Reduction &nbsp;·&nbsp; 60% Faster</p>
+          <h3 class="proj-title">UK Electricity Price Forecasting</h3>
+          <p class="proj-body">Hybrid ARIMA + RL + Monte Carlo pipeline modelling UK electricity prices. Automated on Azure ML. MSc thesis demonstrating 27% reduction in modelled price volatility.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">TensorFlow</span>
+            <span class="proj-tag">ARIMA</span>
+            <span class="proj-tag">Azure ML</span>
+          </div>
+          <a href="https://github.com/charanteja25/Price-prediction-of-electricity-depends-on-renewable-sources" target="_blank" class="proj-cta">
+            <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right" style="font-size:0.65rem"></i>
+          </a>
+        </div>
+
+        <div class="proj-card r" style="transition-delay:0.3s">
+          <p class="proj-kpi">Live &nbsp;·&nbsp; Production &nbsp;·&nbsp; Green Hydrogen</p>
+          <h3 class="proj-title">OctoNexus Power — Company Website</h3>
+          <p class="proj-body">Full production React application for a green hydrogen and fuel cell energy startup. Multi-page site covering services, sectors, impact, careers, and contact. AWS Amplify backend, Redux state management, Google Maps integration, and EmailJS contact forms. Built and deployed as founding team member.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">AWS Amplify</span>
+            <span class="proj-tag">Redux</span>
+            <span class="proj-tag">Material UI</span>
+            <span class="proj-tag">Vercel</span>
+          </div>
+          <a href="https://www.octonexuspower.com" target="_blank" class="proj-cta">
+            <i class="fas fa-external-link-alt"></i> View Live Site <i class="fas fa-arrow-right" style="font-size:0.65rem"></i>
+          </a>
+        </div>
+
+        <div class="proj-card r" style="transition-delay:0.4s">
+          <p class="proj-kpi">Live &nbsp;·&nbsp; Trading This Season &nbsp;·&nbsp; Farmers → Consumers</p>
+          <h3 class="proj-title">Aamrutham — Agri E-Commerce Platform</h3>
+          <p class="proj-body">Full-stack e-commerce platform connecting farmers directly to consumers. Built end-to-end: React + Vite frontend, Node/Express backend, PostgreSQL database, Razorpay payment gateway, Twilio SMS OTP authentication, and Resend email notifications. Actively trading this mango season.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">Node/Express</span>
+            <span class="proj-tag">PostgreSQL</span>
+            <span class="proj-tag">Razorpay</span>
+            <span class="proj-tag">Twilio</span>
+          </div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="https://aamrutham.com" target="_blank" class="proj-cta">
+              <i class="fas fa-external-link-alt"></i> View Live <i class="fas fa-arrow-right" style="font-size:0.65rem"></i>
+            </a>
+            <a href="https://github.com/charanteja25/aamrutham" target="_blank" class="proj-cta">
+              <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right" style="font-size:0.65rem"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="proj-github-cta r">
+        <a href="https://github.com/charanteja25" target="_blank" class="proj-github-link">
+          <i class="fab fa-github"></i>
+          More projects on GitHub
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-wrap">
+      <p class="s-label r">Experience</p>
+      <h2 class="s-title r">Where I've<br>built things.</h2>
+      <div class="tl">
+
+        <div class="tl-item r">
+          <div class="tl-top">
+            <span class="tl-co">OctoNexus Power</span>
+            <span class="tl-badge">Jan 2026 – Present</span>
+          </div>
+          <div class="tl-role">Technical Consultant — Data &amp; AI &nbsp;·&nbsp; Founding Team</div>
+          <div class="tl-desc">Building AI and data infrastructure for green hydrogen and fuel cell systems. Anomaly detection on live telemetry, LLM-powered client reporting. Driving supplier acquisition, client meetings, and partnerships. Clear path to CTO.</div>
+        </div>
+
+        <div class="tl-item r">
+          <div class="tl-top">
+            <span class="tl-co">Aamrutham</span>
+            <span class="tl-badge">Jan 2026 – Present</span>
+          </div>
+          <div class="tl-role">Co-Founder &amp; Tech Lead</div>
+          <div class="tl-desc">Live agri e-commerce platform connecting farmers directly to consumers. Actively trading this season. Full platform architecture, e-commerce stack, and data infrastructure — built from scratch.</div>
+        </div>
+
+        <div class="tl-item r">
+          <div class="tl-top">
+            <span class="tl-co">Fennex</span>
+            <span class="tl-badge">Jul 2024 – Feb 2025</span>
+          </div>
+          <div class="tl-role">Data Scientist</div>
+          <div class="tl-desc">Forecasting and anomaly-detection models for Noble Drilling offshore operations. ETL pipelines via Azure Data Factory. 15+ Power BI dashboards with probabilistic risk modelling and Databricks AI/BI for real-time operational insight. Contributing team member for work recognised with a Digital Innovation Award.</div>
+        </div>
+
+        <div class="tl-item r">
+          <div class="tl-top">
+            <span class="tl-co">University of Aberdeen</span>
+            <span class="tl-badge">Nov 2022 – Oct 2023</span>
+          </div>
+          <div class="tl-role">Research Data Scientist</div>
+          <div class="tl-desc">Royal Society-funded TOSSIB programme. SVM/KNN models on infrastructure data across India and Brazil. 82% classification accuracy. Findings adopted in government planning frameworks across two countries.</div>
+        </div>
+
+        <div class="tl-item r">
+          <div class="tl-top">
+            <span class="tl-co">Amazon</span>
+            <span class="tl-badge">Aug 2020 – May 2022</span>
+          </div>
+          <div class="tl-role">Data Engineer / Transportation Specialist</div>
+          <div class="tl-desc">80% reduction in leadership reporting latency. 41 man-hours saved per week. Python and SQL pipelines for capacity planning, route analysis, and demand forecasting at Amazon scale.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-wrap">
+      <p class="s-label r">Skills</p>
+      <h2 class="s-title r">Tools I build with.</h2>
+      <div class="sk-table r">
+
+        <div class="sk-row">
+          <span class="sk-cat">Generative AI</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="HuggingFace"><span>HuggingFace</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain"><span>LangChain</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Machine Learning</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow"><span>TensorFlow</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch"><span>PyTorch</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn"><span>Scikit-learn</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/microsoft/LightGBM/master/docs/logo/LightGBM_logo_black_text.svg" alt="LightGBM"><span>LightGBM</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/mlflow/0194E2" alt="MLflow"><span>MLflow</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Data Engineering</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks"><span>Databricks</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="PySpark"><span>PySpark</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/delta-lake.svg" alt="Delta Lake"><span>Delta Lake</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Data-Factory.svg" alt="Azure Data Factory"><span>ADF</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Cloud</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/microsoft-azure.svg" alt="Azure"><span>Azure</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/aws.svg" alt="AWS"><span>AWS</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/MarczakIO/azure-portal-icons/master/icons/Machine%20Learning.svg" alt="Azure ML"><span>Azure ML</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/aws.svg" alt="SageMaker"><span>SageMaker</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Visualisation</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg" alt="Power BI"><span>Power BI</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/aws.svg" alt="QuickSight"><span>QuickSight</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Programming</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"><span>Python</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="SQL"><span>SQL</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Databases</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL"><span>MySQL</span></div>
+            <div class="sk-icon"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/microsoft-azure.svg" alt="Azure SQL"><span>Azure SQL</span></div>
+          </div>
+        </div>
+
+        <div class="sk-row">
+          <span class="sk-cat">Tools</span>
+          <div class="sk-items">
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git"><span>Git</span></div>
+            <div class="sk-icon"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter"><span>Jupyter</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="section-wrap">
+      <p class="s-label r">Writing</p>
+      <h2 class="s-title r">Thinking out loud.</h2>
+
+      <div class="writing-grid r">
+
+        <!-- Technical articles -->
+        <a href="https://medium.com/@charanteja.gunisetty/building-a-credit-default-risk-model-on-databricks-d1cd7b415b50" target="_blank" class="article-card featured">
+          <span class="article-tag">Technical · Databricks</span>
+          <p class="article-title">Building a Credit Default Risk Model on Databricks</p>
+          <p class="article-desc">End-to-end walkthrough — medallion architecture, Delta Lake, LightGBM, and MLflow on Databricks.</p>
+          <span class="article-date">Feb 2026</span>
+        </a>
+
+        <a href="https://medium.com/@charanteja.gunisetty/day-4-delta-lake-introduction-to-reliable-data-lakes-b6d8939ec806" target="_blank" class="article-card featured">
+          <span class="article-tag">Technical · Data Engineering</span>
+          <p class="article-title">Delta Lake — Introduction to Reliable Data Lakes</p>
+          <p class="article-desc">ACID compliance, time travel, and schema enforcement for production data pipelines.</p>
+          <span class="article-date">Jan 2026</span>
+        </a>
+
+        <!-- Aamrutham series card -->
+        <a href="https://medium.com/@charanteja.gunisetty" target="_blank" class="article-card series-card">
+          <div class="series-header">
+            <span class="article-tag series">Building in Public</span>
+            <span class="series-count">8 articles</span>
+          </div>
+          <p class="article-title">Aamrutham — From Napkin to Mango Season</p>
+          <p class="article-desc">The full story of building a live agri e-commerce platform from scratch — stack decisions, production bugs, Twilio walls, and what a mango season teaches you about shipping.</p>
+          <div class="series-chapters">
+            <span>Ch.1 Notes on a Napkin</span>
+            <span>Ch.6 The Twilio Wall</span>
+            <span>Ch.8 Mango Season</span>
+            <span>+ 5 more →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-wrap">
+      <div class="contact-inner">
+        <div class="status-pill r">
+          <div class="pulse-dot"></div>
+          Available for opportunities
+        </div>
+        <h2 class="contact-h r">Let's build something<br>worth shipping.</h2>
+        <p class="contact-sub r">Open to senior Data Scientist and Data Engineer roles globally.</p>
+        <a href="mailto:charanteja.teja25@gmail.com" class="contact-email r">
+          <i class="fas fa-envelope"></i>
+          charanteja.teja25@gmail.com
+        </a>
+        <div class="contact-row r">
+          <a href="https://www.linkedin.com/in/charantejagunisetty/" target="_blank" class="contact-lnk">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          <a href="https://github.com/charanteja25" target="_blank" class="contact-lnk">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://medium.com/@charanteja.gunisetty" target="_blank" class="contact-lnk">
+            <i class="fab fa-medium-m"></i> Medium
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2025 Charan Gunisetty</span>
+    <span>Built with intent, not a template.</span>
+  </footer>
+
+  <script>
+    // ── Role cycling ──────────────────────────────
+    const roles = ['Data Scientist','AI Engineer','ML Engineer','Co-Founder'];
+    let ri = 0;
+    const roleEl = document.getElementById('role-text');
+    roleEl.style.cssText = 'transition:opacity 0.3s ease,transform 0.3s ease;display:inline-block';
+    setInterval(() => {
+      roleEl.style.opacity = '0';
+      roleEl.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        ri = (ri + 1) % roles.length;
+        roleEl.textContent = roles[ri];
+        roleEl.style.opacity = '1';
+        roleEl.style.transform = 'translateY(0)';
+      }, 320);
+    }, 2800);
+
+    // ── Scroll reveal ─────────────────────────────
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+    // ── Stat counters ─────────────────────────────
+    function runCount(el) {
+      const t = +el.dataset.t, dur = 1400, step = t / (dur / 16);
+      let c = 0;
+      const id = setInterval(() => {
+        c = Math.min(c + step, t);
+        el.textContent = Math.floor(c);
+        if (c >= t) clearInterval(id);
+      }, 16);
+    }
+    const co = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.cnt').forEach(el => co.observe(el));
+
+    // ── Nav shrink on scroll ──────────────────────
+    const navEl = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      navEl.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
+
 </body>
 </html>
